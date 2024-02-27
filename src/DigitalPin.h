@@ -4,25 +4,26 @@
 #include "Arduino.h"
 
 class DigitalOutPin {
-  public:
-    DigitalOutPin(int pinNumber); 
+public:
+    DigitalOutPin(int pin);
     void turnOn();
     void turnOff();
     void setup();
     bool isOn();
 
-  private:
+private:
     int _pinNumber;
     bool _pinState;
 };
 
 class DigitalInputPin {
-  public:
-    DigitalInputPin(int pinNumber);
-    int read();
+public:
+    DigitalInputPin(int pin);
     void setup();
+    int read();
+    int readAsAnalog();
 
-  private:
+private:
     int _pinNumber;
 };
 

@@ -1,7 +1,7 @@
 #include "DigitalPin.h"
 
-DigitalOutPin::DigitalOutPin(int pinNumber) {
-    _pinNumber = pinNumber;
+DigitalOutPin::DigitalOutPin(int pin) {
+    _pinNumber = pin;
     _pinState = LOW;
 }
 
@@ -23,8 +23,8 @@ bool DigitalOutPin::isOn() {
     return _pinState == HIGH;
 }
 
-DigitalInputPin::DigitalInputPin(int pinNumber) {
-    _pinNumber = pinNumber;
+DigitalInputPin::DigitalInputPin(int pin) {
+    _pinNumber = pin;
 }
 
 void DigitalInputPin::setup() {
@@ -33,4 +33,8 @@ void DigitalInputPin::setup() {
 
 int DigitalInputPin::read() {
     return digitalRead(_pinNumber);
+}
+
+int DigitalInputPin::readAsAnalog(){
+    return analogRead(_pinNumber);
 }
